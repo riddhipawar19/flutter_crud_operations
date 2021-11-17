@@ -14,7 +14,7 @@ class CourseList extends StatefulWidget {
 class _CourseListState extends State<CourseList> {
   Future<List<Model>> getUserData() async {
     var response = await http
-        .get(Uri.parse("http://192.168.43.27:5000/admin/get_courses"));
+        .get(Uri.parse("http://localhost:5000/admin/get_courses"));
     var jsonData = json.decode(response.body);
 
     List<Model> users = [];
@@ -29,7 +29,7 @@ class _CourseListState extends State<CourseList> {
   }
 
   Future<Data> deleteCourse(String name) async {
-      String uri = "http://192.168.43.27:5000/admin/delete_course";
+      String uri = "http://localhost:5000/admin/delete_course";
       final response = await http.delete(Uri.parse(uri),
           headers: <String, String>{
             'Content-Type': 'application/json; charset=UTF-8',

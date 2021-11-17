@@ -11,7 +11,7 @@ class AddNewCourse extends StatelessWidget {
   Widget build(BuildContext context) {
     TextEditingController course_name = TextEditingController();
     Future<Data> saveData(String course_name) async {
-      String uri = "http://192.168.43.27:5000/admin/add_courses";
+      String uri = "http://ocalhost:5000/admin/add_courses";
       final response = await http.post(Uri.parse(uri),
           headers: <String, String>{
             'Content-Type': 'application/json; charset=UTF-8',
